@@ -1,0 +1,48 @@
+Day 73:
+===========
+
+For your Full Stack Series, understanding Objects is a massive milestone. 
+In JavaScript, objects are the building blocks of almost everything. They allow you to store collections of data as key-value pairs.Here are the notes for the three primary ways to create objects:📦 JavaScript Objects: 
+
+3 Ways to Create Them
+============================
+
+1. Using an Object Literal
+=================================
+This is the most common, simplest, and "syntactic sugar" way to create an object. You define the properties and values inside curly braces {}.Best for: Static data or single instances.Syntax: let obj = { key: value };💻 Example:JavaScriptconst car = {
+    brand: "Toyota",
+    model: "Camry",
+    start: function() {
+        console.log("Engine started!");
+    }
+};
+
+console.log(car.brand); // Output: Toyota
+
+2. Using an Instance of an Object (new Object())
+======================================================
+This uses the Object constructor provided by JavaScript. You create an empty object first and then attach properties to it.Best for: When you want to dynamically build an object based on conditions.Syntax: let obj = new Object();💻 Example:JavaScriptconst user = new Object();
+
+user.id = 101;
+user.name = "Rahul";
+user.isAdmin = true;
+
+console.log(user.name); // Output: Rahul
+
+3. Using an Object Constructor Function
+=============================================
+This is a "blueprint" approach. You define a function that describes the structure, and then use the new keyword to create multiple unique instances.Best for: Creating multiple objects of the same "type" (like multiple users or products).Syntax: Uses a function with the this keyword.💻 Example:JavaScriptfunction BankAccount(customer, balance) {
+    this.customer = customer;
+    this.balance = balance;
+    this.deposit = function(amount) {
+        this.balance += amount;
+    };
+}
+
+// Creating multiple instances (objects) from the same constructor
+const account1 = new BankAccount("Amit", 5000);
+const account2 = new BankAccount("Sonal", 12000);
+
+console.log(account1.customer); // Output: Amit
+console.log(account2.balance);  // Output: 12000
+📊 Quick Summary TableMethodSyntax StyleMain Use CaseObject Literal{ }Quick, one-off objects. Most readable.Object Instancenew Object()Rare; used for dynamic building.Constructornew MyFunc()Creating "Blueprints" for multiple similar objects.💡 Pro-Tip for your Series:While the Object Literal is the industry standard for simplicity, the Constructor Function was the precursor to modern ES6 Classes. If you understand Constructors, learning "Classes" later in your series will be a breeze!
